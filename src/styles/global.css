@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
+
+
+*{
+    font-family: 'Inter', sans-serif;
+}
