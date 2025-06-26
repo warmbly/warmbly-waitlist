@@ -1,0 +1,86 @@
+---
+import Logo from "../components/Logo.astro"
+import Layout from "../layouts/Layout.astro"
+import Title from "../components/Terms/Title.astro"
+import Description from "../components/Terms/Description.astro"
+import Link from "../components/Link.astro"
+
+const title = "Terms of Service"
+const description = ""
+---
+<Layout {title} {description}>
+    <div class="py-30 px-4">
+        <div class="mx-auto max-w-5xl">
+            <div class="flex justify-between gap-10 mb-10">
+                <div>
+                    <h1 class="text-4xl font-bold mb-7">Privacy Policy</h1>
+                    <p class="text-gray-800"><b>Effective Date:</b> Jun 25, 2025</p>
+                </div>
+                <a href="/" class="mt-2">
+                    <Logo className="w-15"/>
+                </a>
+            </div>
+            <p class="text-gray-600"><b>Warmbly</b> (“we”, “us”, “our”) is operated by <b>Mindroot Ltd</b>. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our website <Link href="https://warmbly.com">warmbly.com</Link> and associated services (the “Services”).
+                By accessing or using our Services, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+            <hr class="my-10 text-gray-200"/>
+            <Title>1. Information We Collect</Title>
+            <Description>
+                <b>a) Account Information</b><br/><br/>
+
+                When you create an account, we collect only the minimum necessary information:<br/>
+                    •	Email address<br/>
+                    •	Password<br/>
+                    • Timestamps<br/><br/>
+
+                Passwords are hashed securely using Argon2 before storing in our database to protect your credentials.<br/><br/>
+
+                <b>b) Mailbox Data</b><br/><br/>
+
+                If you connect mailboxes to our Services, any sensitive data associated with those mailboxes is stored in encrypted form to ensure confidentiality and security.<br/><br/>
+
+                <b>c) No Additional Tracking</b><br/><br/>
+
+                We do not collect IP addresses, device information, cookies, or any other tracking data.
+            </Description>
+            <Title>2. How We Use Your Information</Title>
+            <Description>We use your information solely for:<br/>
+                    •	Providing and maintaining the Services<br/>
+                    •	Authenticating users and securing accounts<br/>
+                    •	Communicating important updates and support messages<br/>
+                    •	Improving and developing new features<br/>
+                    •	Ensuring compliance with legal obligations<br/><br/>
+
+                We do not collect or process any personal data beyond what is strictly necessary for the operation of the Services.</Description>
+            <Title>3. Data Storage and Security</Title>
+            <Description>
+                	•	All user data is stored on Amazon Web Services (AWS) infrastructure, specifically using Amazon RDS for PostgreSQL databases.<br/>
+                    •	Passwords are hashed with Argon2 algorithm before storage.<br/>
+                    •	Sensitive mailbox data is stored encrypted at rest using industry-standard encryption methods.<br/>
+                    •	We implement appropriate technical and organizational measures to safeguard your data against unauthorized access, alteration, or destruction.
+            </Description>
+            <Title>4. Data Sharing and Disclosure</Title>
+            <Description>We do not sell, trade, or rent your personal information to third parties. We may share data only when required by law or to protect our rights and property.</Description>
+            <Title>5. Your Rights</Title>
+            <Description>Depending on your jurisdiction, you may have rights regarding your personal data, including:<br/>
+                    •	Access to your data<br/>
+                    •	Rectification of inaccurate data<br/>
+                    •	Deletion of your data (“right to be forgotten”)<br/>
+                    •	Restriction of processing<br/>
+                    •	Data portability<br/><br/>
+
+                To exercise these rights, please contact us at support@warmbly.com.</Description>
+            <Title>6. Children’s Privacy</Title>
+            <Description>Our Services are not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13.</Description>
+            <Title>7. Changes to This Privacy Policy</Title>
+            <Description>
+                We may update this Privacy Policy periodically. We will notify you of any significant changes by posting the new policy on our website. Continued use of the Services after changes constitutes acceptance of the updated policy.
+            </Description>
+            <Title>8. Contact Us</Title>
+            <Description>
+                If you have any questions or concerns about this Privacy Policy or your data, please contact:<br/>
+                Mindroot Ltd.<br/>
+                <b>Email:</b> support@warmbly.com
+            </Description>
+        </div>
+    </div>
+</Layout>

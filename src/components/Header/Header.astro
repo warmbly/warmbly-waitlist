@@ -1,6 +1,7 @@
 ---
 import Logo from "../Logo.astro";
 import Link from "./Link.astro"
+import MobileMenu from "./MobileMenu";
 ---
 
 <div class="w-full h-20 border-b px-4 border-gray-200 bg-gray-50/80 flex justify-between">
@@ -13,11 +14,17 @@ import Link from "./Link.astro"
             <div class="hidden lg:flex justify-center items-center">
                 <Link href="/pricing">Pricing</Link>
                 <Link href="https://docs.warmbly.com">API</Link>
-                <Link href="/pricing">Blog</Link>
+                <Link href="/learn">Learn</Link>
                 <Link href="/warmup">Email Warmup</Link>
             </div>
         </div>
-        <div class="flex items-center gap-5">
+        <div class="sm:hidden">
+            <MobileMenu client:load/>
+        </div>
+        <div class="hidden sm:flex items-center gap-5">
+            <div class="hidden sm:block lg:hidden">
+                <MobileMenu client:load/>
+            </div>
             <a href="https://app.warmbly.com/auth/login" class="px-5 py-2 border border-blue-500 text-blue-800 transition hover:bg-blue-50 rounded-full">Login</a>
             <a href="https://app.warmbly.com/auth/register" class="px-5 py-2 bg-blue-500 hover:bg-blue-600 transition text-gray-50 rounded-full">Get started for free</a>
         </div>
