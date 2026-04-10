@@ -1,48 +1,52 @@
-# Astro Starter Kit: Basics
+<div align="center">
+  <img src="public/web-app-manifest-512x512.png" alt="Warmbly" width="128" height="128" />
+
+  <h1>Warmbly Waitlist</h1>
+
+  <p>
+    <strong>Open source, AI-powered email warmup and outreach.</strong><br/>
+    Build sender reputation. Stay out of spam. Ship at scale.
+  </p>
+
+  <p>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" /></a>
+    <img src="https://img.shields.io/badge/built%20with-Astro-FF5D01.svg" alt="Built with Astro" />
+  </p>
+</div>
+
+---
+
+This repo hosts the landing page and early-access waitlist for [Warmbly](https://warmbly.com). It's a static Astro site styled with Tailwind CSS.
+
+## Stack
+
+- [Astro](https://astro.build) 5
+- [Tailwind CSS](https://tailwindcss.com) 4 (via `@tailwindcss/vite`)
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) for automatic sitemap generation
+- [Inter](https://fontsource.org/fonts/inter) via `@fontsource/inter`
+
+## Getting started
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+The dev server runs at `http://localhost:4321`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Scripts
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+| Command           | What it does                              |
+| :---------------- | :---------------------------------------- |
+| `npm run dev`     | Start the local dev server                |
+| `npm run build`   | Build the production site to `./dist/`    |
+| `npm run preview` | Preview the production build locally      |
+| `npm run astro`   | Run Astro CLI commands (`add`, `check`, …) |
 
-## 🚀 Project Structure
+## Contributing
 
-Inside of your Astro project, you'll see the following folders and files:
+Issues and pull requests are welcome. If you're planning a larger change, open an issue first so we can talk through it.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## License
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[MIT](LICENSE) © Warmbly
