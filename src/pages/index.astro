@@ -1,87 +1,374 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header/Header.astro';
-import Heropic from '../components/Heropic.astro';
-import Box from '../components/Section2/Box.astro';
-import Icon from '../components/Section2/Icon.astro';
-import BoxTop from '../components/Section2/BoxTop.astro';
-import BoxStep from '../components/Section2/BoxStep.astro';
-import BoxTitle from "../components/Section2/BoxTitle.astro";
-import BoxDescription from "../components/Section2/BoxDescription.astro";
-import Footer from "../components/Footer/Footer.astro";
 
-const title = "Warmbly | Scale Your Email Outreach with AI"
-const description = "Warmbly | Scale Your Email Outreach with AI"
+const title = "Warmbly | Open Source AI Email Warmup & Outreach"
+const description = "Warmbly is an open source, AI-powered email warmup and outreach platform that builds your sender reputation and keeps you out of spam. Join the waitlist for early access."
+
+const KIT_FORM_ID = "YOUR_KIT_FORM_ID";
 ---
 
 <Layout {title} {description}>
-	<Header/>
-	<div class="px-4 bg-gray-50 overflow-hidden">
-		<div class="max-w-7xl mx-auto">
-			<div class="flex flex-col items-center">
-				<div class="py-2 px-3 mt-20 text-gray-500"><span class="bg-linear-to-r from-cyan-500 to-blue-600 text-white py-1 px-3 rounded-lg mr-3">AI</span> Powered Personalization</div>
-				<h1 class="font-bold text-5xl text-center text-gray-800 mb-13 max-w-5xl mt-10 leading-13">Helping You Grow Your Business and Scale Your Email Outreach with AI</h1>
-				<p class="text-center max-w-6xl text-gray-500 text-md">Warmbly makes it easy to launch cold email campaigns that feel truly personal and human. Build trust, save time and create meaningful connections with AI that works for you — so you can focus on nurturing relationships and growing your business.</p>
-			</div>
-			<div class="mt-15 flex justify-center items-center gap-7">
-				<a href="https://app.warmbly.com/" class="px-5 py-3 bg-blue-500 transition hover:bg-blue-600 text-gray-50 rounded-full">Get started for free</a>
-				<p class="text-gray-500">No credit card required.</p>
-			</div>
-			<Heropic className="w-full mt-20 shadow-[0px_-7px_100px_-50px_#ffaddd] shadow-2xl border-t border-l border-r border-gray-200 rounded-t-3xl z-10" />
-		</div>
-	</div>
-	<section class="py-25 px-4 bg-white">
-		<div class="max-w-7xl mx-auto">
-			<div class="flex flex-col md:flex-row mb-20 md:gap-15 mb-10">
-				<div class="max-w-lg">
-					<p class="uppercase text-blue-500 mb-5">Choose the easier way</p>
-					<h1 class="text-5xl font-bold text-gray-800 leading-14">Sending Emails Has Never Been Easier.</h1>
-				</div>
-				<p class="text-gray-500 max-w-4xl mt-12 text-lg">Connect, create, and let Warmbly do the rest. No more manual sending, no more wasted hours. Warmbly prepares, warms up, and delivers your emails, so you can focus on growing your business.</p>
-			</div>
-			<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-				<Box>
-					<BoxTop className="text-indigo-700">
-						<Icon className="bg-indigo-200">
-							<i class="ri-mail-ai-line"></i>
-						</Icon>
-						<BoxStep>1</BoxStep>
-					</BoxTop>
-					<BoxTitle>Connect Your Email Addresses</BoxTitle>
-					<BoxDescription>Link your existing addresses.</BoxDescription>
-				</Box>
-				<Box>
-					<BoxTop className="text-orange-700">
-						<Icon className="bg-orange-200">
-							<i class="ri-megaphone-line"></i>
-						</Icon>
-						<BoxStep>2</BoxStep>
-					</BoxTop>
-					<BoxTitle>Create a Campaign</BoxTitle>
-					<BoxDescription>Build your templates, set the schedule.</BoxDescription>
-				</Box>
-				<Box>
-					<BoxTop className="text-green-700">
-						<Icon className="bg-green-200">
-							<i class="ri-group-line"></i>
-						</Icon>
-						<BoxStep>3</BoxStep>
-					</BoxTop>
-					<BoxTitle>Import Your Contacts</BoxTitle>
-					<BoxDescription>Upload your leads, customers, or prospects.</BoxDescription>
-				</Box>
-				<Box className="lg:col-span-2">
-					<BoxTop className="text-amber-700">
-						<Icon className="bg-amber-200">
-							<i class="ri-flashlight-line"></i>
-						</Icon>
-						<BoxStep>4</BoxStep>
-					</BoxTop>
-					<BoxTitle>Warmbly Does the Rest For You</BoxTitle>
-					<BoxDescription>It automatically sends your campaign at the right time, while warming up your accounts for better deliverability.</BoxDescription>
-				</Box>
-			</div>
-		</div>
-	</section>
-	<Footer/>
+  <div
+    class="fixed inset-0"
+    style="overflow: clip; background: radial-gradient(ellipse 140% 140% at 72% 25%, #38bdf8 0%, #0ea5e9 18%, #0284c7 36%, #075985 58%, #0c4a6e 82%);"
+  >
+
+    <!-- Sky breathe -->
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse 140% 140% at 72% 25%, #7dd3fc 0%, #38bdf8 18%, #0ea5e9 36%, #0284c7 58%, #075985 82%); animation: sky-breathe 30s ease-in-out infinite;"
+    ></div>
+
+    <!-- Ambient light drift -->
+    <div
+      class="absolute inset-0 pointer-events-none z-[1]"
+      style="background: radial-gradient(ellipse 50% 50% at 65% 30%, rgba(186,230,253,0.10) 0%, rgba(56,189,248,0.04) 40%, transparent 65%); animation: light-drift 45s ease-in-out infinite;"
+    ></div>
+
+    <!-- Horizon haze -->
+    <div
+      class="absolute inset-x-0 bottom-0 h-[45%] pointer-events-none z-[1]"
+      style="background: linear-gradient(to top, rgba(125,211,252,0.12) 0%, rgba(56,189,248,0.06) 35%, transparent 100%);"
+    ></div>
+
+    <!-- Deep atmosphere scatter -->
+    <div
+      class="absolute pointer-events-none z-[1]"
+      style="width: 120%; height: 120%; left: -20%; top: 10%; background: radial-gradient(ellipse 60% 50% at 25% 70%, rgba(14,165,233,0.10) 0%, rgba(7,89,133,0.05) 40%, transparent 70%); animation: atmo-drift 55s ease-in-out infinite;"
+    ></div>
+
+    <!-- Upper atmosphere haze -->
+    <div
+      class="absolute pointer-events-none z-[1]"
+      style="width: 100%; height: 100%; background: radial-gradient(ellipse 80% 40% at 10% 50%, rgba(56,189,248,0.07) 0%, rgba(14,165,233,0.03) 50%, transparent 80%); animation: atmo-drift-2 40s ease-in-out infinite;"
+    ></div>
+
+    <!-- SVG cloud filters -->
+    <svg class="absolute" width="0" height="0" aria-hidden="true">
+      <defs>
+        <!-- Set A -->
+        <filter id="a-back" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="2" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="180" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="4" />
+        </filter>
+        <filter id="a-mid" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="3" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="140" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="14" />
+        </filter>
+        <filter id="a-front" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="4" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="100" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="18" />
+        </filter>
+        <!-- Set B -->
+        <filter id="b-back" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="17" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="180" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="4" />
+        </filter>
+        <filter id="b-mid" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="18" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="140" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="14" />
+        </filter>
+        <filter id="b-front" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="19" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="100" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="18" />
+        </filter>
+        <!-- Set C -->
+        <filter id="c-back" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="42" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="180" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="4" />
+        </filter>
+        <filter id="c-mid" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="43" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="140" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="14" />
+        </filter>
+        <filter id="c-front" x="-100%" y="-100%" width="350%" height="350%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="44" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="100" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="18" />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Cloud A -->
+    <div class="absolute pointer-events-none select-none top-[5%] left-[5%]" style="opacity: 0.95; animation: cloud-float-1 55s ease-in-out infinite;">
+      <div style="position: absolute; width: 500px; height: 275px; background-color: #fff; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 60px 20px rgba(255,255,255,0.8); filter: url(#a-back); -webkit-filter: url(#a-back);"></div>
+      <div style="position: absolute; width: 440px; height: 96px; left: 30px; top: 170px; background-color: #c4cfe0; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 45px 10px rgba(196,207,224,0.6); filter: url(#a-mid); -webkit-filter: url(#a-mid);"></div>
+      <div style="position: absolute; width: 380px; height: 41px; left: 60px; top: 225px; background-color: #8d9bb5; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 35px 8px rgba(141,155,181,0.5); filter: url(#a-front); -webkit-filter: url(#a-front);"></div>
+    </div>
+
+    <!-- Cloud B -->
+    <div class="absolute pointer-events-none select-none top-[8%] left-[52%]" style="opacity: 0.9; animation: cloud-float-2 48s ease-in-out infinite;">
+      <div style="position: absolute; width: 450px; height: 250px; background-color: #fff; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 60px 20px rgba(255,255,255,0.8); filter: url(#b-back); -webkit-filter: url(#b-back);"></div>
+      <div style="position: absolute; width: 396px; height: 88px; left: 27px; top: 155px; background-color: #c4cfe0; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 45px 10px rgba(196,207,224,0.6); filter: url(#b-mid); -webkit-filter: url(#b-mid);"></div>
+      <div style="position: absolute; width: 342px; height: 38px; left: 54px; top: 205px; background-color: #8d9bb5; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 35px 8px rgba(141,155,181,0.5); filter: url(#b-front); -webkit-filter: url(#b-front);"></div>
+    </div>
+
+    <!-- Cloud C -->
+    <div class="absolute pointer-events-none select-none top-[30%] left-[18%]" style="opacity: 0.85; animation: cloud-float-3 42s ease-in-out infinite;">
+      <div style="position: absolute; width: 380px; height: 210px; background-color: #fff; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 60px 20px rgba(255,255,255,0.8); filter: url(#c-back); -webkit-filter: url(#c-back);"></div>
+      <div style="position: absolute; width: 334px; height: 74px; left: 23px; top: 130px; background-color: #c4cfe0; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 45px 10px rgba(196,207,224,0.6); filter: url(#c-mid); -webkit-filter: url(#c-mid);"></div>
+      <div style="position: absolute; width: 289px; height: 32px; left: 46px; top: 172px; background-color: #8d9bb5; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 35px 8px rgba(141,155,181,0.5); filter: url(#c-front); -webkit-filter: url(#c-front);"></div>
+    </div>
+
+    <!-- Cloud D -->
+    <div class="absolute pointer-events-none select-none top-[55%] left-[48%]" style="opacity: 0.7; animation: cloud-float-4 50s ease-in-out infinite;">
+      <div style="position: absolute; width: 420px; height: 230px; background-color: #fff; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 60px 20px rgba(255,255,255,0.8); filter: url(#a-back); -webkit-filter: url(#a-back);"></div>
+      <div style="position: absolute; width: 370px; height: 81px; left: 25px; top: 143px; background-color: #c4cfe0; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 45px 10px rgba(196,207,224,0.6); filter: url(#a-mid); -webkit-filter: url(#a-mid);"></div>
+      <div style="position: absolute; width: 319px; height: 35px; left: 50px; top: 189px; background-color: #8d9bb5; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 35px 8px rgba(141,155,181,0.5); filter: url(#a-front); -webkit-filter: url(#a-front);"></div>
+    </div>
+
+    <!-- Cloud E -->
+    <div class="absolute pointer-events-none select-none top-[45%] left-[-2%]" style="opacity: 0.6; animation: cloud-float-1 44s ease-in-out infinite;">
+      <div style="position: absolute; width: 320px; height: 175px; background-color: #fff; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 60px 20px rgba(255,255,255,0.8); filter: url(#b-back); -webkit-filter: url(#b-back);"></div>
+      <div style="position: absolute; width: 282px; height: 61px; left: 19px; top: 109px; background-color: #c4cfe0; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 45px 10px rgba(196,207,224,0.6); filter: url(#b-mid); -webkit-filter: url(#b-mid);"></div>
+      <div style="position: absolute; width: 243px; height: 26px; left: 38px; top: 144px; background-color: #8d9bb5; border-radius: 50% 50% 8% 8%; box-shadow: 0 0 35px 8px rgba(141,155,181,0.5); filter: url(#b-front); -webkit-filter: url(#b-front);"></div>
+    </div>
+
+    <!-- Sun glow -->
+    <div
+      class="absolute top-[6%] right-[12%] w-[800px] h-[800px] rounded-full pointer-events-none blur-3xl z-[1]"
+      style="background: radial-gradient(circle, rgba(253,230,138,0.22) 0%, rgba(253,186,116,0.08) 35%, rgba(56,189,248,0.03) 55%, transparent 70%); animation: sun-pulse 22s ease-in-out infinite;"
+    ></div>
+
+    <!-- ════════════ Content ════════════ -->
+    <div class="relative z-10 h-full flex flex-col items-center justify-center px-5">
+
+      <!-- Sky-colored veil to soften clouds behind content -->
+      <div
+        class="absolute inset-0 pointer-events-none z-0"
+        style="background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(2,132,199,0.45) 0%, transparent 70%);"
+      ></div>
+
+      <div class="relative z-10 flex flex-col items-center text-center max-w-2xl">
+
+        <!-- Logo -->
+        <div class="animate-fade-in-up flex items-center gap-3 mb-10">
+          <svg class="w-12 h-12" viewBox="0 0 746 764" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M222.805 644.772L186.274 108.881L704.5 451.158L484.5 451.158L245.5 196.158L444 463.5L222.805 644.772Z" fill="white" />
+          </svg>
+          <span style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;" class="font-extrabold text-[28px] tracking-tight text-white">Warmbly</span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="animate-fade-in-up-delay-1 text-white text-[clamp(2.2rem,5.5vw,3.5rem)] font-bold leading-[1.1] tracking-tight mb-5" style="font-family: Georgia, 'Times New Roman', serif;">
+          Your emails deserve<br/>
+          the <span class="text-sky-200 italic">inbox.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="animate-fade-in-up-delay-2 text-white/60 text-[clamp(0.95rem,2vw,1.15rem)] leading-relaxed max-w-md mb-6">
+          Open source, AI-powered email warmup and outreach that builds your sender reputation and keeps you out of spam. Be the first to know when we launch.
+        </p>
+
+        <!-- Open source badge -->
+        <a href="https://github.com/warmbly/warmbly" target="_blank" rel="noopener noreferrer" class="animate-fade-in-up-delay-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.06] text-white/50 text-xs hover:bg-white/10 hover:text-white/70 transition-all mb-10">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          Open Source
+        </a>
+
+        <!-- Waitlist Form -->
+        <div data-waitlist-root class="animate-fade-in-up-delay-3 w-full max-w-md">
+          <form
+            data-waitlist-form
+            data-form-id={KIT_FORM_ID}
+            class="flex flex-col sm:flex-row gap-2.5 w-full transition-all duration-300"
+          >
+            <div class="relative w-full sm:flex-1">
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+                class="w-full h-12 px-4 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/40 text-sm outline-none transition-all duration-200 focus:border-sky-300/50 focus:ring-2 focus:ring-sky-300/15 focus:bg-white/15"
+              />
+              <p data-waitlist-error class="absolute -bottom-5 left-1 text-[11px] text-red-300 opacity-0 transition-opacity duration-200"></p>
+            </div>
+            <button
+              type="submit"
+              data-waitlist-btn
+              class="relative h-12 px-7 rounded-xl bg-white text-sky-700 font-semibold text-sm transition-all duration-200 cursor-pointer whitespace-nowrap shadow-[0_1px_12px_rgba(255,255,255,0.2)] hover:shadow-[0_1px_20px_rgba(255,255,255,0.35)] hover:bg-sky-50 active:scale-[0.98] overflow-hidden"
+            >
+              <span data-btn-text class="inline-flex items-center gap-1.5 transition-all duration-200">Join Waitlist</span>
+              <span data-btn-spinner class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200">
+                <svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5" opacity="0.3"></circle>
+                  <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                </svg>
+              </span>
+            </button>
+          </form>
+
+          <!-- Success state -->
+          <div data-waitlist-success class="flex items-center justify-center gap-3 h-12 opacity-0 scale-95 transition-all duration-400 pointer-events-none absolute">
+            <div class="w-10 h-10 rounded-full bg-emerald-400/15 border border-emerald-400/25 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path data-check-path d="M20 6L9 17l-5-5" style="stroke-dasharray: 30; stroke-dashoffset: 30; transition: stroke-dashoffset 0.4s ease 0.2s;" />
+              </svg>
+            </div>
+            <div class="text-left">
+              <p class="text-sm font-semibold text-white">You're on the list!</p>
+              <p class="text-xs text-white/50">Check your inbox to confirm.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="animate-fade-in-up-delay-4 text-xs text-white/30 mt-4">No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-2 animate-fade-in">
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/warmbly/warmbly" target="_blank" rel="noopener noreferrer" class="text-[12px] text-white/30 hover:text-white/60 transition-colors">GitHub</a>
+          <span class="text-white/15">|</span>
+          <a href="https://dc.warmbly.com" target="_blank" rel="noopener noreferrer" class="text-[12px] text-white/30 hover:text-white/60 transition-colors">Discord</a>
+          <span class="text-white/15">|</span>
+          <a href="https://x.warmbly.com" target="_blank" rel="noopener noreferrer" class="text-[12px] text-white/30 hover:text-white/60 transition-colors">X</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="/terms" class="text-[11px] text-white/25 hover:text-white/50 transition-colors">Terms</a>
+          <span class="text-white/10">&middot;</span>
+          <a href="/privacy" class="text-[11px] text-white/25 hover:text-white/50 transition-colors">Privacy</a>
+          <span class="text-white/10">&middot;</span>
+          <span class="text-[11px] text-white/20">&copy; {new Date().getFullYear()} Mindroot Ltd</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<script>
+  function initWaitlistForms() {
+    document.querySelectorAll('[data-waitlist-root]').forEach((root) => {
+      const el = root as HTMLElement;
+      if (el.dataset.initialized) return;
+      el.dataset.initialized = 'true';
+
+      const form = el.querySelector('[data-waitlist-form]') as HTMLFormElement;
+      const input = form.querySelector('input[name="email"]') as HTMLInputElement;
+      const btn = form.querySelector('[data-waitlist-btn]') as HTMLButtonElement;
+      const btnText = btn.querySelector('[data-btn-text]') as HTMLElement;
+      const btnSpinner = btn.querySelector('[data-btn-spinner]') as HTMLElement;
+      const errorEl = form.querySelector('[data-waitlist-error]') as HTMLElement;
+      const successEl = el.querySelector('[data-waitlist-success]') as HTMLElement;
+      const checkPath = successEl.querySelector('[data-check-path]') as SVGPathElement;
+
+      function showError(msg: string) {
+        errorEl.textContent = msg;
+        errorEl.style.opacity = '1';
+        input.style.borderColor = 'rgba(252, 165, 165, 0.5)';
+        setTimeout(() => {
+          errorEl.style.opacity = '0';
+          input.style.borderColor = '';
+        }, 3000);
+      }
+
+      function setLoading(loading: boolean) {
+        btn.disabled = loading;
+        if (loading) {
+          btnText.style.opacity = '0';
+          btnText.style.transform = 'translateY(4px)';
+          btnSpinner.style.opacity = '1';
+          btn.style.pointerEvents = 'none';
+        } else {
+          btnText.style.opacity = '1';
+          btnText.style.transform = 'translateY(0)';
+          btnSpinner.style.opacity = '0';
+          btn.style.pointerEvents = '';
+        }
+      }
+
+      function showSuccess() {
+        form.style.opacity = '0';
+        form.style.transform = 'translateY(-8px)';
+        form.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+          form.style.position = 'absolute';
+          successEl.style.position = 'relative';
+          successEl.style.opacity = '1';
+          successEl.style.transform = 'scale(1)';
+          successEl.style.pointerEvents = 'auto';
+          checkPath.style.strokeDashoffset = '0';
+        }, 300);
+
+        setTimeout(() => {
+          successEl.style.opacity = '0';
+          successEl.style.transform = 'scale(0.95)';
+          successEl.style.pointerEvents = 'none';
+
+          setTimeout(() => {
+            successEl.style.position = 'absolute';
+            form.style.position = 'relative';
+            form.style.opacity = '1';
+            form.style.transform = 'translateY(0)';
+            form.style.pointerEvents = '';
+            setLoading(false);
+            input.value = '';
+            checkPath.style.strokeDashoffset = '30';
+          }, 300);
+        }, 5000);
+      }
+
+      input.addEventListener('input', () => {
+        errorEl.style.opacity = '0';
+        input.style.borderColor = '';
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formId = form.dataset.formId;
+        const email = input.value.trim();
+
+        if (!email) {
+          showError('Please enter your email');
+          input.focus();
+          return;
+        }
+
+        setLoading(true);
+        errorEl.style.opacity = '0';
+
+        try {
+          const res = await fetch(
+            `https://app.kit.com/forms/${formId}/subscriptions`,
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+              },
+              body: JSON.stringify({ email_address: email }),
+            }
+          );
+
+          const data = await res.json().catch(() => null);
+
+          if (res.ok && data?.status === 'success') {
+            showSuccess();
+          } else {
+            throw new Error(data?.error || 'Request failed');
+          }
+        } catch (err: any) {
+          setLoading(false);
+          showError(err?.message === 'Failed to fetch'
+            ? 'Network error. Check your connection.'
+            : 'Something went wrong. Try again.');
+          btn.style.animation = 'shake 0.4s ease';
+          setTimeout(() => btn.style.animation = '', 400);
+        }
+      });
+    });
+  }
+
+  initWaitlistForms();
+  document.addEventListener('astro:after-swap', initWaitlistForms);
+</script>

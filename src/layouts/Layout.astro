@@ -1,20 +1,28 @@
 ---
-const { title, description } = Astro.props;
+interface Props {
+	title: string;
+	description: string;
+	ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : new URL('/web-app-manifest-512x512.png', Astro.site).href;
 
 import "../styles/global.css";
 import '@fontsource/inter/400';
 import '@fontsource/inter/500';
 import '@fontsource/inter/600';
 import '@fontsource/inter/700';
-import '@fontsource/poppins/600';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+		<!-- Favicons -->
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="shortcut icon" href="/favicon.ico" />
@@ -22,10 +30,30 @@ import '@fontsource/poppins/600';
 		<meta name="apple-mobile-web-app-title" content="Warmbly" />
 		<link rel="manifest" href="/site.webmanifest" />
 
-		<meta name="generator" content={Astro.generator} />
+		<!-- SEO -->
 		<title>{title}</title>
-		<meta name="description" content={description}/>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#0ea5e9" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:site_name" content="Warmbly" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
+		<meta name="twitter:site" content="@warmbly" />
 	</head>
 	<body>
 		<slot />

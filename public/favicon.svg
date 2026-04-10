@@ -1,0 +1,56 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sky gradient matching the site -->
+    <radialGradient id="sky" cx="0.65" cy="0.25" r="0.85" fx="0.65" fy="0.25">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="18%" stop-color="#0ea5e9"/>
+      <stop offset="40%" stop-color="#0284c7"/>
+      <stop offset="65%" stop-color="#075985"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </radialGradient>
+    <!-- Sun glow -->
+    <radialGradient id="sun" cx="0.72" cy="0.22" r="0.45">
+      <stop offset="0%" stop-color="#fde68a" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#fdba74" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Cloud softness -->
+    <filter id="cloud-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="cloud-blur-sm" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <!-- Clip to rounded rect -->
+    <clipPath id="rounded">
+      <rect width="512" height="512" rx="108" ry="108"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <!-- Background sky -->
+    <rect width="512" height="512" fill="url(#sky)"/>
+
+    <!-- Sun glow overlay -->
+    <rect width="512" height="512" fill="url(#sun)"/>
+
+    <!-- Cloud shapes (subtle, behind logo) -->
+    <!-- Cloud top-left -->
+    <ellipse cx="95" cy="105" rx="100" ry="50" fill="white" opacity="0.18" filter="url(#cloud-blur)"/>
+    <!-- Cloud top-right -->
+    <ellipse cx="420" cy="80" rx="85" ry="42" fill="white" opacity="0.14" filter="url(#cloud-blur)"/>
+    <!-- Cloud bottom-left -->
+    <ellipse cx="60" cy="400" rx="110" ry="45" fill="white" opacity="0.10" filter="url(#cloud-blur)"/>
+    <!-- Cloud bottom-right -->
+    <ellipse cx="440" cy="420" rx="90" ry="40" fill="white" opacity="0.12" filter="url(#cloud-blur)"/>
+    <!-- Small wisp center-left -->
+    <ellipse cx="140" cy="310" rx="60" ry="25" fill="white" opacity="0.08" filter="url(#cloud-blur-sm)"/>
+    <!-- Small wisp right -->
+    <ellipse cx="400" cy="250" rx="55" ry="22" fill="white" opacity="0.07" filter="url(#cloud-blur-sm)"/>
+
+    <!-- White logo, centered and scaled -->
+    <g transform="translate(33, 67) scale(0.502)">
+      <path d="M222.805 644.772L186.274 108.881L704.5 451.158L484.5 451.158L245.5 196.158L444 463.5L222.805 644.772Z" fill="white"/>
+    </g>
+  </g>
+</svg>
