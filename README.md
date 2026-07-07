@@ -16,7 +16,7 @@
 
 ---
 
-This repo hosts the landing page and early-access waitlist for [Warmbly](https://warmbly.com). It's a static Astro site styled with Tailwind CSS.
+This repo hosts the landing page and early-access waitlist for [Warmbly](https://warmbly.com). It's a static Astro site styled with Tailwind CSS and deployed as a fully static build.
 
 ## Stack
 
