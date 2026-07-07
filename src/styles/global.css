@@ -4,68 +4,128 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* ── Sky / Cloud animations ─────────────────────── */
+/* ================================================================
+   Warmbly hero atmosphere — deep-sky gradient with a breathing
+   glow, real painterly cloud WebP images drifting across it, and a
+   soft pulsing sun. Mirrors site/src/components/HeroAtmosphere.astro
+   and web/src/app/auth/layout.tsx so the waitlist shares the exact
+   same sky as the marketing site and the app auth screens.
+================================================================ */
 
-@keyframes sky-breathe {
-    0%, 100% { opacity: 0; transform: scale(1); }
-    40% { opacity: 0.22; transform: scale(1.03); }
-    70% { opacity: 0.10; transform: scale(0.98); }
+.sky-base {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 140% 140% at 72% 25%,
+        #7dd3fc 0%,
+        #38bdf8 18%,
+        #0ea5e9 36%,
+        #0284c7 58%,
+        #075985 82%
+    );
 }
 
-@keyframes light-drift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(3%, -2%) scale(1.05); }
-    50% { transform: translate(-2%, 3%) scale(0.95); }
-    75% { transform: translate(4%, 1%) scale(1.02); }
+.sky-breathe {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 140% 140% at 72% 25%,
+        rgba(186, 230, 253, 0.85) 0%,
+        rgba(56, 189, 248, 0.42) 18%,
+        rgba(14, 165, 233, 0.18) 36%,
+        transparent 60%
+    );
+    animation: sky-breathe 30s ease-in-out infinite;
+}
+
+@keyframes sky-breathe {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%      { opacity: 0.45; transform: scale(1.05); }
+}
+
+.sky-haze-bottom {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 55%;
+    pointer-events: none;
+    background: linear-gradient(to top,
+        rgba(125, 211, 252, 0.18) 0%,
+        rgba(56, 189, 248, 0.08) 35%,
+        transparent 100%
+    );
+}
+
+.sun-glow {
+    position: absolute;
+    top: 8%;
+    right: 14%;
+    width: 700px;
+    height: 700px;
+    max-width: 90vw;
+    max-height: 90vw;
+    border-radius: 9999px;
+    pointer-events: none;
+    filter: blur(40px);
+    background: radial-gradient(circle,
+        rgba(253, 230, 138, 0.30) 0%,
+        rgba(253, 186, 116, 0.10) 32%,
+        rgba(186, 230, 253, 0.04) 55%,
+        transparent 70%
+    );
+    animation: sun-pulse 22s ease-in-out infinite;
 }
 
 @keyframes sun-pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.1); }
+    50%      { opacity: 0.6; transform: scale(1.10); }
 }
 
-@keyframes atmo-drift {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
-    30% { transform: translate(4%, -3%) scale(1.08); opacity: 0.7; }
-    60% { transform: translate(-3%, 2%) scale(0.95); opacity: 1; }
-    80% { transform: translate(2%, -1%) scale(1.03); opacity: 0.8; }
+/* Soft veil directly behind the centered content so the white form
+   text keeps its contrast wherever a cloud drifts past. */
+.content-veil {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 62% 52% at 50% 50%,
+        rgba(3, 105, 161, 0.45) 0%,
+        rgba(7, 89, 133, 0.18) 42%,
+        transparent 72%
+    );
 }
 
-@keyframes atmo-drift-2 {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
-    40% { transform: translate(-5%, 3%) scale(1.1); opacity: 1; }
-    70% { transform: translate(3%, -2%) scale(0.92); opacity: 0.6; }
+/* Real painterly cloud — an <img> that slowly drifts. Front clouds
+   glide farther/faster, back clouds barely move, for parallax depth. */
+.cloud-drift {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    height: auto;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    will-change: transform;
 }
 
-@keyframes cloud-float-1 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    25% { transform: translateX(35px) translateY(-10px); }
-    50% { transform: translateX(55px) translateY(5px); }
-    75% { transform: translateX(20px) translateY(-6px); }
+@keyframes cloud-glide-1 {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(60px, -10px, 0); }
+}
+@keyframes cloud-glide-2 {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50px, 8px, 0); }
+}
+@keyframes cloud-glide-3 {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(40px, 18px, 0); }
 }
 
-@keyframes cloud-float-2 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    33% { transform: translateX(-45px) translateY(8px); }
-    66% { transform: translateX(-20px) translateY(-12px); }
-}
+.cloud-1 { animation-name: cloud-glide-1; animation-duration: 32s; }
+.cloud-2 { animation-name: cloud-glide-2; animation-duration: 40s; }
+.cloud-3 { animation-name: cloud-glide-3; animation-duration: 26s; }
 
-@keyframes cloud-float-3 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(30px) translateY(10px); }
-}
-
-@keyframes cloud-float-4 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    20% { transform: translateX(-20px) translateY(-6px); }
-    60% { transform: translateX(25px) translateY(8px); }
-    80% { transform: translateX(10px) translateY(-4px); }
-}
-
-@keyframes card-float {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* ================================================================
+   Content entrance + micro-interactions
+================================================================ */
 
 @keyframes fade-in {
     from { opacity: 0; }
@@ -77,6 +137,11 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+}
+
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     20% { transform: translateX(-4px); }
@@ -85,34 +150,84 @@
     80% { transform: translateX(3px); }
 }
 
-/* ── Utility classes ─────────────────────── */
-
 @layer utilities {
-    .animate-card-float {
-        animation: card-float 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
     .animate-fade-in {
         animation: fade-in 0.5s ease both;
     }
-
     .animate-fade-in-up {
         animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
-
     .animate-fade-in-up-delay-1 {
         animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
     }
-
     .animate-fade-in-up-delay-2 {
         animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
     }
-
     .animate-fade-in-up-delay-3 {
         animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
     }
-
     .animate-fade-in-up-delay-4 {
         animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    }
+    .animate-pulse-soft {
+        animation: pulse-soft 2.4s ease-in-out infinite;
+    }
+}
+
+/* ================================================================
+   The centered white card — entrance, continuous float, halo, and
+   a staggered blur-in reveal for its contents. Mirrors the app auth
+   card (rounded, soft border, deep shadow, animate-card-float).
+================================================================ */
+
+/* Soft white halo that lifts the card off the sky. */
+.card-glow {
+    position: absolute;
+    inset: -14% -10%;
+    pointer-events: none;
+    border-radius: 44px;
+    background: radial-gradient(58% 58% at 50% 42%,
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(186, 230, 253, 0.20) 46%,
+        transparent 76%
+    );
+    filter: blur(34px);
+}
+
+/* One-shot entrance: rise + scale + un-blur. */
+@keyframes card-enter {
+    from { opacity: 0; transform: translateY(28px) scale(0.965); filter: blur(8px); }
+    to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+.card-enter {
+    animation: card-enter 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.1s;
+}
+
+/* Staggered blur-in for the card's contents (opacity + blur only,
+   so it never compounds with the card's entrance transform). */
+@keyframes reveal-in {
+    from { opacity: 0; filter: blur(6px); }
+    to   { opacity: 1; filter: blur(0); }
+}
+
+@layer utilities {
+    .reveal-1 { animation: reveal-in 0.6s ease both; animation-delay: 0.35s; }
+    .reveal-2 { animation: reveal-in 0.6s ease both; animation-delay: 0.45s; }
+    .reveal-3 { animation: reveal-in 0.6s ease both; animation-delay: 0.55s; }
+    .reveal-4 { animation: reveal-in 0.6s ease both; animation-delay: 0.65s; }
+    .reveal-5 { animation: reveal-in 0.6s ease both; animation-delay: 0.75s; }
+}
+
+/* Honor reduced-motion: hold everything still (base state is visible,
+   so disabling the entrance/reveal animations simply shows content). */
+@media (prefers-reduced-motion: reduce) {
+    .sky-breathe,
+    .sun-glow,
+    .cloud-drift,
+    .animate-pulse-soft,
+    .card-enter,
+    .reveal-1, .reveal-2, .reveal-3, .reveal-4, .reveal-5 {
+        animation: none !important;
     }
 }
