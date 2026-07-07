@@ -14,6 +14,9 @@ import '@fontsource/inter/400';
 import '@fontsource/inter/500';
 import '@fontsource/inter/600';
 import '@fontsource/inter/700';
+// Fraunces — premium display serif for the hero title (variable weight + italic).
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource-variable/fraunces/opsz-italic.css';
 ---
 
 <!doctype html>
@@ -61,10 +64,13 @@ import '@fontsource/inter/700';
 </html>
 
 <style>
+	html {
+		overflow-x: hidden;
+	}
 	html,
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
 	}
 </style>
