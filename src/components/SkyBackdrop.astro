@@ -1,0 +1,58 @@
+---
+/**
+ * Sky atmosphere (fixed, full-bleed, clipped) — mirrors site/HeroAtmosphere.astro
+ * and the web auth layout: deep-sky gradient, breathing glow, drifting cloud
+ * WebPs, soft pulsing sun. Pinned to the viewport so the clouds never add
+ * scroll and content can float over it.
+ */
+---
+
+<div class="fixed inset-0 overflow-hidden" aria-hidden="true">
+  <div class="sky-base"></div>
+  <div class="sky-breathe"></div>
+  <div class="sky-haze-bottom"></div>
+  <div class="sun-glow"></div>
+
+  <!-- Real painterly clouds — framed around the edges so the centered card
+       stays clear. Front clouds are larger/more opaque; the two hero clouds
+       load eagerly, the rest lazily. -->
+  <img
+    src="/backdrops/cloud-5.webp" alt="" decoding="async"
+    loading="eager" fetchpriority="high"
+    class="cloud-drift cloud-1"
+    style="top: -6%; left: -8%; width: clamp(300px, 44vw, 660px); opacity: 0.92;"
+  />
+  <img
+    src="/backdrops/cloud-2.webp" alt="" decoding="async"
+    loading="eager" fetchpriority="high"
+    class="cloud-drift cloud-2"
+    style="top: 0%; right: -7%; width: clamp(280px, 40vw, 600px); opacity: 0.88;"
+  />
+  <img
+    src="/backdrops/cloud-3.webp" alt="" decoding="async" loading="lazy"
+    class="cloud-drift cloud-3"
+    style="top: 46%; left: -12%; width: clamp(220px, 28vw, 440px); opacity: 0.68;"
+  />
+  <img
+    src="/backdrops/cloud-4.webp" alt="" decoding="async" loading="lazy"
+    class="cloud-drift cloud-1"
+    style="bottom: 3%; right: -7%; width: clamp(220px, 28vw, 430px); opacity: 0.64;"
+  />
+  <img
+    src="/backdrops/cloud-1.webp" alt="" decoding="async" loading="lazy"
+    class="cloud-drift cloud-2"
+    style="bottom: -7%; left: 15%; width: clamp(180px, 24vw, 380px); opacity: 0.48;"
+  />
+
+  <!-- Twinkling spark -->
+  <svg
+    class="absolute pointer-events-none animate-pulse-soft"
+    style="top: 15%; left: 33%; width: 14px; height: 14px;"
+    viewBox="0 0 14 14" fill="none"
+  >
+    <path d="M7 1 L8.5 5.5 L13 7 L8.5 8.5 L7 13 L5.5 8.5 L1 7 L5.5 5.5 Z" fill="rgba(255,255,255,0.9)" />
+  </svg>
+
+  <!-- Soft veil so the white logo + footer stay legible over the clouds -->
+  <div class="content-veil"></div>
+</div>

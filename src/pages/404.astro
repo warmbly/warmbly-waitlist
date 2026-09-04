@@ -1,17 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import WaitlistHero from '../components/WaitlistHero.astro';
 
-const title = "404 Not Found"
-const description = "The page you're looking for doesn't seem to exist."
+/**
+ * Every unmatched URL renders the waitlist instead of an error page — there is
+ * nothing else to browse yet, so a dead end would only lose a signup. Kept out
+ * of the index (canonical + noindex) so it never competes with `/`.
+ */
+const title = "Warmbly | Open Source AI Email Warmup & Outreach"
+const description = "Warmbly is an open source, AI-powered email warmup and outreach platform that builds your sender reputation and keeps you out of spam. Join the waitlist for early access."
 ---
 
-<Layout {title} {description}>
-    <div class="min-h-screen bg-white flex flex-col items-center justify-center px-4 text-center">
-        <svg class="w-14 mb-6" viewBox="0 0 746 764" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M222.805 644.772L186.274 108.881L704.5 451.158L484.5 451.158L245.5 196.158L444 463.5L222.805 644.772Z" fill="#0ea5e9" />
-        </svg>
-        <h1 class="text-6xl font-bold text-gray-800 mb-4">404</h1>
-        <p class="text-gray-500 text-lg mb-8 max-w-md">The page you're looking for doesn't seem to exist. Head back to Warmbly.</p>
-        <a href="/" class="px-6 py-3 bg-sky-500 hover:bg-sky-600 transition text-white rounded-full font-medium">Go Home</a>
-    </div>
+<Layout {title} {description} canonical="/" noindex>
+  <WaitlistHero />
 </Layout>

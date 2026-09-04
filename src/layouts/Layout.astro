@@ -3,10 +3,14 @@ interface Props {
 	title: string;
 	description: string;
 	ogImage?: string;
+	/** Override the canonical path (the 404 route points back at `/`). */
+	canonical?: string;
+	/** Keep the page out of search results (used by the 404 route). */
+	noindex?: boolean;
 }
 
-const { title, description, ogImage } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description, ogImage, canonical, noindex = false } = Astro.props;
+const canonicalURL = new URL(canonical ?? Astro.url.pathname, Astro.site);
 const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : new URL('/web-app-manifest-512x512.png', Astro.site).href;
 
 import "../styles/global.css";
@@ -39,7 +43,7 @@ import '@fontsource-variable/fraunces/opsz-italic.css';
 		<link rel="canonical" href={canonicalURL} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="robots" content="index, follow" />
+		<meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
 		<meta name="theme-color" content="#0ea5e9" />
 
 		<!-- Open Graph -->

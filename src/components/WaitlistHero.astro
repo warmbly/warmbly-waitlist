@@ -1,0 +1,85 @@
+---
+/**
+ * The full waitlist screen: sky atmosphere, logo, glass card with the Kit
+ * form, and the footer. Rendered by both `/` and the 404 route so that any
+ * URL on the domain lands on the waitlist instead of a dead end.
+ */
+import SkyBackdrop from './SkyBackdrop.astro';
+import WaitlistForm from './WaitlistForm.astro';
+---
+
+<main class="relative">
+  <SkyBackdrop />
+
+  <!-- ════════════ Content ════════════ -->
+  <div class="relative z-10 flex min-h-[100dvh] w-full flex-col items-center justify-center px-5 py-12">
+
+    <!-- Logo — white, on the sky, above the card -->
+    <a href="/" class="animate-fade-in-up mb-6 flex items-center gap-2.5">
+      <svg class="w-8 h-8" viewBox="0 0 746 764" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M222.805 644.772L186.274 108.881L704.5 451.158L484.5 451.158L245.5 196.158L444 463.5L222.805 644.772Z" fill="white" />
+      </svg>
+      <span class="font-extrabold text-[20px] tracking-tight text-white">Warmbly</span>
+    </a>
+
+    <!-- Card -->
+    <div class="card-enter w-full max-w-[500px]">
+      <div class="relative">
+        <div class="card-glow" aria-hidden="true"></div>
+
+        <div class="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white px-6 py-9 text-center shadow-[0_1px_2px_rgba(15,23,42,0.05),0_44px_80px_-34px_rgba(8,47,73,0.42)] sm:px-9 sm:py-10">
+          <!-- top sky accent line -->
+          <div class="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/70 to-transparent"></div>
+
+          <!-- Eyebrow / open-source pill -->
+          <a
+            href="https://github.com/warmbly/warmbly" target="_blank" rel="noopener noreferrer"
+            class="reveal-1 mb-6 inline-flex h-8 items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 pl-2.5 pr-3 text-[11.5px] font-medium text-slate-600 transition-colors hover:border-sky-200 hover:bg-sky-50 hover:text-sky-700"
+          >
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.5 4.6-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            Open source · Join the waitlist
+          </a>
+
+          <!-- Heading — Fraunces display serif -->
+          <h1
+            class="reveal-2 text-[27px] leading-[1.06] text-slate-900 sm:text-[38px]"
+            style="font-family: 'Fraunces Variable', Georgia, 'Times New Roman', serif; font-weight: 560; font-optical-sizing: auto; letter-spacing: -0.02em;"
+          >
+            Your emails deserve<br/>
+            the <span class="italic text-sky-600">inbox.</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="reveal-3 mx-auto mt-3.5 max-w-[330px] text-[14px] leading-relaxed text-slate-500">
+            Open-source, AI email warmup &amp; outreach that builds sender reputation and keeps you out of spam. Be first when we launch.
+          </p>
+
+          <!-- Waitlist form -->
+          <div class="reveal-4 mt-7">
+            <WaitlistForm />
+          </div>
+
+          <p class="reveal-5 mt-3.5 text-[11.5px] text-slate-500">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer — on the sky, below the card -->
+    <div class="animate-fade-in mt-8 flex flex-col items-center gap-2.5">
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/warmbly/warmbly" target="_blank" rel="noopener noreferrer" class="text-[12px] text-white/50 transition-colors hover:text-white/80">GitHub</a>
+        <span class="text-white/25">·</span>
+        <a href="https://dc.warmbly.com" target="_blank" rel="noopener noreferrer" class="text-[12px] text-white/50 transition-colors hover:text-white/80">Discord</a>
+        <span class="text-white/25">·</span>
+        <a href="https://x.warmbly.com" target="_blank" rel="noopener noreferrer" class="text-[12px] text-white/50 transition-colors hover:text-white/80">X</a>
+      </div>
+      <div class="flex items-center gap-2.5">
+        <a href="/terms" class="text-[11px] text-white/40 transition-colors hover:text-white/70">Terms</a>
+        <span class="text-white/20">·</span>
+        <a href="/privacy" class="text-[11px] text-white/40 transition-colors hover:text-white/70">Privacy</a>
+        <span class="text-white/20">·</span>
+        <span class="text-[11px] text-white/35">&copy; {new Date().getFullYear()} Mindroot Ltd</span>
+      </div>
+    </div>
+  </div>
+</main>
