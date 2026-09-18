@@ -217,6 +217,7 @@
     .reveal-3 { animation: reveal-in 0.6s ease both; animation-delay: 0.55s; }
     .reveal-4 { animation: reveal-in 0.6s ease both; animation-delay: 0.65s; }
     .reveal-5 { animation: reveal-in 0.6s ease both; animation-delay: 0.75s; }
+    .reveal-6 { animation: reveal-in 0.6s ease both; animation-delay: 0.85s; }
 }
 
 /* Honor reduced-motion: hold everything still (base state is visible,
@@ -227,7 +228,7 @@
     .cloud-drift,
     .animate-pulse-soft,
     .card-enter,
-    .reveal-1, .reveal-2, .reveal-3, .reveal-4, .reveal-5 {
+    .reveal-1, .reveal-2, .reveal-3, .reveal-4, .reveal-5, .reveal-6 {
         animation: none !important;
     }
 }
